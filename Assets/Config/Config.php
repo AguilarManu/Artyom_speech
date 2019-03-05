@@ -9,7 +9,7 @@ class Config{
 		define("PROYECTO_NOMBRE", "INTERACCION_USUARIO");
 		// define("BASE_URL", $this->getPath()['base_url']);
 		// Base URL estática
-		$_SESSION['base_url'] == 'http://localhost/proyectos/Artyom_speech/';
+		// $_SESSION['base_url'] == 'http://localhost/proyectos/Artyom_speech/';
 	}
 
 	

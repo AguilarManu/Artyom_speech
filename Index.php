@@ -1,4 +1,9 @@
 <?php require_once 'Assets/Componentes/header.php'; ?>
+	<div class="uk-container" style="padding: 4px;">
+		<ul class="uk-breadcrumb">
+	    	<li><a href="<?=$_SESSION['base_url']?>"><span>Inicio</span></a></li>
+		</ul>
+	</div>
 	<!-- Inciar cuerpo .uk-card-body-->
 	<div class="uk-card-small uk-card-body contenedor">
 		<div class="uk-container uk-container-expand">
@@ -12,3 +17,6 @@
 		</div>
 	</div> <!-- End .uk-card-body .contenedor-->
 <?php require_once 'Assets/Componentes/Footer.php' ?>
+<script type="text/javascript">
+	var base_url = "<?=$_SESSION['base_url']?>";
+</script>

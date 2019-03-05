@@ -2,10 +2,15 @@
 	require '../../Assets/Componentes/Header.php';
 	require '../../Assets/Config/Config.php';
 	require '../../Assets/Modelo/Modelo.php';
-	echo ($config->getPath()['hostName']);
 ?>
+<div class="uk-container" style="padding: 4px;">
+	<ul class="uk-breadcrumb">
+	    <li><a href="<?=$_SESSION['base_url']?>">Inicio</a></li>
+	    <li><a href="#"><span>Iniciar Sesión</span></a></li>
+	</ul>
+</div>
 <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
-	<div class="uk-width-1-1">
+	<div class="uk-width-1-1" style="margin-top: -250px;">
 		<div class="uk-container">
 			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
 				<div class="uk-width-1-1@m">
