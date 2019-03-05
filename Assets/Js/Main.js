@@ -1,5 +1,36 @@
 jQuery(document).ready(function() {
 	// Página cargada
+  $('#form-autenticacion').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/proyectos/Artyom_speech/Assets/Modelo/Usuario_m.php',
+      type: 'POST',
+      data: {peticion: 'Autenticacion', usuario:''+$('input[name=usuario]').val(), contrasenia: ''+$('input[name=constrasenia]').val()},
+      success: function(result) {
+        // console.log(result.action);
+            Swal.fire(
+              'Excelente',
+              result,
+              'success'
+            )
+        if (result.action == 1) {
+        }
+      },
+      error: function(XMLHttpRequest) {
+        console.error(XMLHttpRequest);
+      }
+    })
+  });
+
+
+  $('#my-id').on({'show.uk.modal': function(){
+                console.log("Modal is visible.");
+            },'hide.uk.modal': function(){
+                console.log("Element is not visible.");
+            }
+          });
+
+  
 });
 
 
@@ -47,12 +78,14 @@ artyom.addCommands([
 	},{
         indexes:['INICIAR SESIÓN'],
         action: function() {
-          	artyom.say('INICIANDO SESIÓN, ESPERE UN MOMENTO POR FAVOR');
+          artyom.say('INICIANDO SESIÓN, ESPERE UN MOMENTO POR FAVOR');
+          UIkit.modal('#my-id').show();
         }
 	},{
         indexes:['FINALIZAR'],
         action: function() {
           	artyom.say('FINALIZANDO, HASTA LUEGO');
+            artyom.fatality();
         }
 	}
 ]);
